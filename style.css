@@ -1,0 +1,141 @@
+/* Body Styling */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('Image/greenforest.jpg'); /* Enchanted forest background */
+  background-size: cover;
+  background-position: center;
+  font-family: 'Cinzel', serif; /* Use a fantasy-themed font */
+  color: #fff;
+}
+
+/* Container for Wizard and Calculator */
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  text-align: center;
+}
+
+/* Wizard Styling */
+.wizard img {
+  width: 250px; /* Increase the width to make it bigger */
+  height: auto; /* Maintain the aspect ratio */
+  animation: idle 2s infinite alternate;
+}
+
+
+.wizard-text {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.7); /* Transparent black background */
+  border: 2px solid #ffcc00; /* Gold border for magical vibes */
+  border-radius: 10px;
+  color: #ffcc00; /* Golden text */
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.wizard-text.hidden {
+  display: none;
+}
+
+/* Calculator Styling */
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(0, 50, 0, 0.8); /* Mossy green background */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7), inset 0 0 10px #00ff00; /* Glow effect */
+}
+
+/* Calculator Display */
+#display {
+  height: 50px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5em;
+  text-align: right;
+  padding: 10px;
+  background: #111; /* Dark background */
+  color: #0f0; /* Glowing green text */
+  text-shadow: 0 0 5px #00ff00;
+}
+
+/* Buttons */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  background: #2a2; /* Mossy green button */
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+  transition: all 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  background: #3c3; /* Brighter green on hover */
+  box-shadow: 0 0 10px #00ff00; /* Glow effect */
+}
+
+button.zero {
+  grid-column: span 2;
+}
+
+/* Animations */
+@keyframes idle {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px #00ff00;
+  }
+  50% {
+    box-shadow: 0 0 20px #00ff00;
+  }
+}
+
+/* Add glow for error animations */
+@keyframes angry {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px red;
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px red;
+  }
+}
